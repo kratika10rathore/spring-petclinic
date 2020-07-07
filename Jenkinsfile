@@ -33,4 +33,7 @@ node {
                         bat "${scannerHome}/bin/sonar-scanner -Dsonar.host.url=http://localhost:9000 -Dsonar.login=ae4ad2719f4e184fca8bc60610d8746a1eeea4cf -Dsonar.projectVersion=1.0 -Dsonar.projectKey=PetClinic_Key -Dsonar.sources=src -Dsonar.java.binaries=**/classes/**"
                 }
         } 
+        stage('Archive Artfiact'){
+                archiveArtifacts 'target/petclinic.war'
+        }
 }
